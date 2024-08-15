@@ -6,9 +6,9 @@
   /* CSS HSL */
   /* https://coolors.co/ */
 
-  --primaria: hsla(210, 67%, 43%, 1);
-  --background: hsla(108, 22%, 87%, 1);
-  --secundaria: hsla(34, 100%, 50%, 1);
+  --primaria: rgb(31, 28, 216);
+  --background: rgb(255, 255, 255);
+  --secundaria: rgb(230, 255, 5);
   --destaque: hsla(355, 78%, 56%, 1);
   --detalhe: hsla(9, 63%, 45%, 1);
 
