@@ -8,7 +8,7 @@ const getAll = async () => {
   return await handleResponse(response);  
 }
 
-const getElenco = async (elenco = 'masculino') => {
+const getElenco = async (elenco = 'feminino') => {
   const response = await (fetch(`${url}/${elenco}`).catch(handleError));
 
   return await handleResponse(response);

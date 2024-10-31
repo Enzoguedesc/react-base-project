@@ -1,12 +1,25 @@
+import { useParams } from "react-router-dom";
 import FotoCard from "../components/FotoCard/FotoCard";
 import ListContainer from "../components/ListContainer/ListContainer";
-import dados from "../data/computadores.json";
+import brutos from "../data/computadores.json";
+import Base from "./Base";
 import Protegida from "./Protegida";
+import { useEffect, useState } from "react";
 
 const Fotos = () => {
+  const [ dados, setDados ] = useState(brutos);
+
+  const filtro = (entrada) => {
+    setDados(brutos.filter(
+    (ele) => ele.nome.includes(entrada)
+      ))
+    }
  
   return (
-      <Protegida>
+      <Base>
+        <input type="text"
+          onChange={ (e) => filtro(e.target.value)}
+        />
         <ListContainer>
           {dados.map(
             (el, index) => (
@@ -20,7 +33,7 @@ const Fotos = () => {
               )
           )}
           </ListContainer>
-      </Protegida>      
+      </Base>      
  )
 };
 
