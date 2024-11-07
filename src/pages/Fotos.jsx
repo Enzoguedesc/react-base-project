@@ -11,15 +11,38 @@ const Fotos = () => {
 
   const filtro = (entrada) => {
     setDados(brutos.filter(
-    (ele) => ele.nome.includes(entrada)
+          (ele) => ele.nome.includes(entrada)
       ))
     }
+
+  useEffect( () => {
+    if (parametros.has('chave')){
+      setDadosFiltrados(brutos.filter(
+      ))
+    } else {
+      setDadosFiltrados(bruto)
+    }
+    setDados(setDadosFiltrados);
+  }, [parametros])
  
   return (
       <Base>
         <input type="text"
           onChange={ (e) => filtro(e.target.value)}
         />
+        <select onChange={ (e) => {parametros.set('autor', e.target.value); setParametros (parametros)}}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <select onChange={ (e) => {parametros.set('autor', e.target.value); setParametros (parametros)}}>
+          <option value="João">João</option>
+          <option value="Pedro">Pedro</option>
+          <option value="André">André</option>
+          <option value="Carlos">Carlos</option>
+        </select>
+
         <ListContainer>
           {dados.map(
             (el, index) => (
